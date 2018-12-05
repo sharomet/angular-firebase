@@ -1,0 +1,47 @@
+<button class="btn btn-primary" (click)="openModal(content)">Add New</button>
+<ul>
+  <li *ngFor="let user of users | async">{{ user.firstName }} - {{ user.email }}</li>
+</ul>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <form (submit)="addUser($event)" [formGroup]="form">
+    <div class="modal-header bg-primary text-white">
+      <p class="modal-title" id="user-title">New User</p>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input id="firstName" formControlName="firstName" name="firstName" placeholder="First Name" class="form-control" [ngClass]="{'is-invalid': (form.controls.firstName.errors && form.controls.firstName.dirty), 'is-valid': !form.controls.firstName.errors}">
+        <div class="invalid-feedback d-block" *ngIf="form.controls.firstName.errors?.required && form.controls.firstName.dirty">
+          This field is required!
+        </div>
+        <div class="invalid-feedback d-block" *ngIf="form.controls.firstName.errors?.minlength || form.controls.firstName.errors?.maxlength">
+          Minimum characters: 3, Maximum characters: 50.
+        </div>
+        <div class="invalid-feedback d-block" *ngIf="form.controls.firstName.errors?.validateName && form.controls.firstName.dirty">
+          Name must not have any special characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" formControlName="email" name="email" placeholder="Email" [ngClass]="{'is-invalid': (form.controls.email.errors && form.controls.email.dirty), 'is-valid': !form.controls.email.errors}">
+        <div class="invalid-feedback d-block" *ngIf="form.controls.email.errors?.required && form.controls.email.dirty">
+          This field is required!
+        </div>
+        <div class="invalid-feedback d-block" *ngIf="form.controls.email.errors?.minlength || form.controls.email.errors?.maxlength">
+          Minimum characters: 5, Maximum characters: 50.
+        </div>
+        <div class="invalid-feedback d-block" *ngIf="form.controls.email.errors?.validateEmail && form.controls.email.dirty">
+          This must be a valid E-mail.
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-warning" (click)="d()">Close</button>
+      <button type="submit" class="btn btn-success">Save</button>
+    </div>
+  </form>
+</ng-template>
