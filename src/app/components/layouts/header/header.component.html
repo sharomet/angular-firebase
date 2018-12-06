@@ -8,7 +8,7 @@
 
     <div class="collapse navbar-collapse" id="topNavbar">
       <ul class="navbar-nav ml-auto">
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
           <a routerLink="/" class="nav-link">Home</a>
         </li>
         <li routerLinkActive="active">
@@ -17,6 +17,9 @@
         <li routerLinkActive="active">
           <a routerLink="/page" class="nav-link">Page</a>
         </li>
+        <li routerLinkActive="active">
+            <a routerLink="/admin/dashboard" class="nav-link">Admin</a>
+          </li>
       </ul>
     </div>
   </div>

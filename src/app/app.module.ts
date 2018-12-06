@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,10 @@ import { PageLayoutComponent } from './components/layouts/page-layout/page-layou
 import { HomeComponent } from './components/home/home.component';
 import { PageComponent } from './components/page/page.component';
 import { UsersComponent } from './components/users/users.component';
+import { AdminLayoutComponent } from './components/layouts/admin-layout/admin-layout.component';
+import { AsideComponent } from './components/layouts/aside/aside.component';
+import { CategoriesComponent } from './components/admin/categories/categories.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { UsersComponent } from './components/users/users.component';
     PageLayoutComponent,
     HomeComponent,
     PageComponent,
-    UsersComponent
+    UsersComponent,
+    AdminLayoutComponent,
+    AsideComponent,
+    CategoriesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

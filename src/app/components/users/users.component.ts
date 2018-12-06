@@ -4,6 +4,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { UsersService } from '../../services/users.service'
+import { User } from '../../models/User'
 
 @Component({
   selector: 'app-users',
@@ -13,7 +14,7 @@ import { UsersService } from '../../services/users.service'
 export class UsersComponent implements OnInit {
 
   private closeResult: string;
-  private users: Observable<any[]>;
+  private users: Observable<User[]>;
   private form: FormGroup;
   private modalRef: NgbModalRef;
 

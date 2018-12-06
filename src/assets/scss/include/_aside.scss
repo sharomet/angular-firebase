@@ -1,0 +1,22 @@
+#aside {
+    ul {
+        li {
+            padding: 0;
+            a {
+                display: block;
+                padding: $list-group-item-padding-y $list-group-item-padding-x;
+                &:hover,
+                &:focus {
+                    background-color: $list-group-hover-bg;
+                    text-decoration: none;
+                }
+            }
+            &.active {
+                > a {
+                    color: $list-group-active-color;
+                    background-color: $list-group-active-bg;
+                }
+            }
+        }
+    }
+}
