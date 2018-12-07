@@ -1,11 +1,15 @@
 <table class="table table-hover table-sm table-bordered table-striped bg-white">
   <thead>
     <tr>
+      <th class="td-id">#</th>
       <th>Name</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let category of categories | async">
+    <tr *ngFor="let category of categories">
+      <td class="td-id">
+        <div class="td-id-div">{{ category.id }}</div>
+      </td>
       <td>{{ category.name }}</td>
     </tr>
   </tbody>

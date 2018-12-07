@@ -1,0 +1,12 @@
+.td-id,
+.td-id-div {
+    width: 80px;
+}
+.td-id-div {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.table thead th {
+    border-bottom-width: 1px;
+}
